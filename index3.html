@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app3.css">
+</head>
+<body>
+    
+    <div id="monCanvas">
+        <img src="" id="imgReplace" class="hidden">
+    </div>
+
+    <div id="types">
+        <img src="" id="type1"><img src="" id="type2">
+    </div>
+
+    <button id="choose" onclick="chooseMon()">Choose</button>
+    <button id="cry" onclick="monCry()">Cry</button>
+    <button id="typesBtn" onclick="revealTypes()">Types</button>
+
+    <input type="text" placeholder="Guess" id="guessInput">
+    <button id="guessBtn" onclick="nameGuess()">Guess!</button>
+    
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="app3.js"></script>
+</body>
+</html>

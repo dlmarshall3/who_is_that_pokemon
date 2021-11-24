@@ -1,0 +1,18 @@
+#monCanvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(img/forest_background.png);
+    background-position: center bottom;
+    width: 600px;
+    height: 600px;
+}
+
+#imgReplace {
+    width: 300px;
+    height: 300px;
+}
+
+.hidden {
+    filter: contrast(0%) brightness(0%);
+}
