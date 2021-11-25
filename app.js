@@ -3,6 +3,7 @@ let score = 0;
 let monArr = [];
 let monPrevDupeArr = [];
 let guessInput = document.querySelector('#guessInput');
+let guessBtn = document.querySelector('#guessBtn')
 let cryBtn = document.querySelector('#cry')
 let monImg = document.querySelector('#imgReplace')
 let typeOneImg = document.querySelector('#type1')
@@ -47,13 +48,16 @@ async function getPokemonInfo(){
 }
 
 //checks to see if name typed in input matches the name
-function nameGuess(){
+guessBtn.addEventListener('click', function(e){
+    e.preventDefault();
     let userGuess = guessInput.value;
     let userGuessLC = userGuess.toLowerCase();
     if(userGuessLC === monArr[0].name){
         score++;
         scoreText.innerHTML = score;
         monImg.classList.toggle('hidden');
+        guessInput.value = "";
+        $('#guessInput').focus();
         // let audio = new Audio(`cries/${mon}.wav`);
         // audio.play();
                 
@@ -62,8 +66,7 @@ function nameGuess(){
             chooseMon();
             getPokemonInfo();
             monImg.classList.toggle('hidden');
-            $('#guessInput').focus();
-            guessInput.value = "";
+
             typeOneImg.src = "";
             typeTwoImg.src = "";
         }, 1200);
@@ -74,7 +77,7 @@ function nameGuess(){
         scoreText.innerHTML = score;
         $('#guessInput').focus();
     }
-}
+})
 
 function weirdNames(name){
     if(name === "nidoran-f"){
