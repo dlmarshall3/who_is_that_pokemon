@@ -10,6 +10,10 @@ let typeOneImg = document.querySelector('#type1')
 let typeTwoImg = document.querySelector('#type2')
 let scoreText = document.querySelector('#counterScore');
 let $guessInput = $('#guessInput');
+let hintsDiv = document.querySelector('#hintsDiv')
+let lettersH3 = document.querySelector('#lettersH3');
+let dexH3 = document.querySelector('#dexNumH3')
+
 
 
 
@@ -55,26 +59,27 @@ guessBtn.addEventListener('click', function(e){
     if(userGuessLC === monArr[0].name){
         score++;
         scoreText.innerHTML = score;
+        let audio = new Audio(`cries/${mon}.wav`);
+        audio.volume = 0.1;
+        audio.play();
         monImg.classList.toggle('hidden');
         guessInput.value = "";
         $('#guessInput').focus();
-        // let audio = new Audio(`cries/${mon}.wav`);
-        // audio.play();
-                
         setTimeout(function(){
             monArr = [];
             chooseMon();
             getPokemonInfo();
+            hintsDiv.classList.add('hints')
             monImg.classList.toggle('hidden');
-
+            dexH3.innerText = "";
+            lettersH3.innerText ="";
             typeOneImg.src = "";
             typeTwoImg.src = "";
-        }, 1200);
+        }, 1750);
     }
     else {
         alert('Try again!');
-        score--;
-        scoreText.innerHTML = score;
+        hintsDiv.classList.remove('hints')
         $('#guessInput').focus();
     }
 })
@@ -86,12 +91,15 @@ function weirdNames(name){
     else if(name === "nidoran-m"){
         return "nidoran"
     }
+    else if(name === "mr-mime"){
+        return "mr. mime"
+    }
     return name;
 }
 
-//plays the associated cry
 // function monCry(){
 //     let audio = new Audio(`cries/${mon}.wav`);
+//     audio.volume = 0.2;
 //     audio.play();
 // }
 
@@ -99,9 +107,13 @@ function revealTypes(){
     typeOneImg.src = `img/types/${type1}.png`;
 }
 
-
-chooseMon()
-getPokemonInfo()
+function revealLetters(){
+    let monName = monArr[0].name;
+    let firstLetter = monName.substr(0,1);
+    let secondLetter = monName.substr(-1,1);
+    let innerText = `${firstLetter} - ${secondLetter}`;
+    lettersH3.innerText = innerText.toUpperCase();
+}
 
 function revealTypes(){
     let type1 = monArr[0].type;
@@ -111,7 +123,13 @@ function revealTypes(){
     typeTwoImg.src = `img/types/${type2}.png`;
 } else {
     typeOneImg.src = `img/types/${type1}.png`;
-}}
+    }
+}
+
+function revealDexNum(){
+    let dexDiv = document.querySelector('#dexNum');
+    dexH3.innerText = `${mon}`; 
+}
 
 function winningScore(){
     if(score === 151){
@@ -119,5 +137,9 @@ function winningScore(){
     }
 }
 
+
+chooseMon()
+getPokemonInfo()
 winningScore()
+
 

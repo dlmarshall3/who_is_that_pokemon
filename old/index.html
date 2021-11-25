@@ -12,45 +12,52 @@
 <body>
 
 
+<div class="container-fluid">
 
-<div class="container">
-    
-    <div id="colOne">
-        <h1>Who's that Pokémon?</h1>
-        <div id="monCanvas">
-            <img src="" id="imgReplace" class="hidden">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="header"><h1>Who's that Pokémon?</h1></div>
         </div>
     </div>
 
-    <div id="colTwo">
+    <div class="row">
         
-        <div id="counter">
-            <h2><span>Score: </span><span id="counterScore"></span></h2>
-        </div>
-        
-        <div id="guessDiv">
-            <form>
-            <input type="text" placeholder="Who's that Pokémon?" id="guessInput" autofocus>
-            <button id="guessBtn">Guess!</button>
-            </form>
+        <div class="col-md-6">
+            <div id="monCanvas">
+                <img src="" id="imgReplace" class="hidden">
+            </div>
         </div>
 
-        <div id="hintsDiv" class="hints">
-            <div id="types">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="counter">
+                        <h2><span id="counterText">Counter: </span><span id="counterScore"></span></h2>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="types">
+                    <img src="" id="type1"><img src="" id="type2">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
                 <button id="typesBtn" onclick="revealTypes()">Types</button>
-                <img src="" id="type1"><img src="" id="type2">
-            </div>
-            <div id="letters">
-                <button id="lettersBtn" onclick="revealLetters()">First/Last Letter</button>
-                <h3 id="lettersH3"></h3>
-            </div>
-            <div id="dexNum">
-                <button id="dexNum" onclick="revealDexNum()">Pokedex Number</button>
-                <h3 id="dexNumH3"></h3>
+                <form>
+                    <input type="text" placeholder="Guess" id="guessInput" autofocus>
+                    <button id="guessBtn">Guess!</button>
+                </form>
             </div>
         </div>
 
+        </div>
     </div>
+
 </div>
 
 

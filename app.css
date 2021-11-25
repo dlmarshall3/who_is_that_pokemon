@@ -10,7 +10,10 @@
     src: local('Pokemon'), url('font/Pokemon\ Hollow.ttf')
 }
 
-
+body {
+    background: url(img/background2.png);
+    background-position: center bottom;
+}
 
 h1 {
     font-family: 'Pokemon';
@@ -18,7 +21,7 @@ h1 {
     font-size: 72px;
     color: #ffcb05;
     letter-spacing: 4px;
-    -webkit-text-stroke: 2px #2a75bb;
+    -webkit-text-stroke: 3px #2a75bb;
 }
 
 h2 {
@@ -30,11 +33,21 @@ h2 {
     -webkit-text-stroke: 2px #2a75bb;
 }
 
+h3 {
+    font-family: 'Pokemon';
+    font-style: bold;
+    font-size: 48px;
+    color: #ffcb05;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 2px #2a75bb;
+    display: inline;
+    margin-left: 5px;
+}
+
 #monCanvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(img/forest_background.png);
     background-position: center bottom;
     width: 450px;
     height: 450px;
@@ -48,4 +61,81 @@ h2 {
 
 .hidden {
     filter: contrast(0%) brightness(0%);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+#colTwo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#guessBtn {
+    margin-top: 5px;
+}
+
+#typesBtn {
+    margin-top: 10px;
+}
+
+#lettersBtn{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div button {
+    border: 4px solid #2a75bb;
+    background-color: #ffcb05;
+    border-radius: 5px;
+}
+
+.hints {
+    display: none;
+}
+
+input {
+    border-radius: 5px;
+    border: 4px solid #2a75bb;
+    background-color: #ffcb05;
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #monCanvas {
+        height: 425px;
+        width: 425px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #colTwo {
+        width: 100%;
+    }
 }

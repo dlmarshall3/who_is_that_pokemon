@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Pokemon';
+    font-style: bold;
+    src: local('Pokemon'), url('font/Pokemon\ Solid.ttf');
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    font-style: italic;
+    src: local('Pokemon'), url('font/Pokemon\ Hollow.ttf')
+}
+
+
+
+h1 {
+    font-family: 'Pokemon';
+    font-style: bold;
+    font-size: 72px;
+    color: #ffcb05;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 2px #2a75bb;
+}
+
+h2 {
+    font-family: 'Pokemon';
+    font-style: bold;
+    font-size: 72px;
+    color: #ffcb05;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 2px #2a75bb;
+}
+
+#monCanvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(img/forest_background.png);
+    background-position: center bottom;
+    width: 450px;
+    height: 450px;
+}
+
+#imgReplace {
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+}
+
+.hidden {
+    filter: contrast(0%) brightness(0%);
+}
