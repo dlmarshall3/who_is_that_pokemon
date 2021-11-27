@@ -71,16 +71,17 @@ guessBtn.addEventListener('click', function(e){
             getPokemonInfo();
             hintsDiv.classList.add('hints')
             monImg.classList.toggle('hidden');
-            dexH3.innerText = "";
-            lettersH3.innerText ="";
             typeOneImg.src = "";
             typeTwoImg.src = "";
         }, 1750);
     }
     else {
-        alert('Try again!');
-        hintsDiv.classList.remove('hints')
-        $('#guessInput').focus();
+        tryAgainModal.style.display = "block";
+        setTimeout(function(){
+            hintsDiv.classList.remove('hints')
+            $('#guessInput').focus();
+            
+        }, 1000)
     }
 })
 
@@ -95,40 +96,6 @@ function weirdNames(name){
         return "mr. mime"
     }
     return name;
-}
-
-// function monCry(){
-//     let audio = new Audio(`cries/${mon}.wav`);
-//     audio.volume = 0.2;
-//     audio.play();
-// }
-
-function revealTypes(){
-    typeOneImg.src = `img/types/${type1}.png`;
-}
-
-function revealLetters(){
-    let monName = monArr[0].name;
-    let firstLetter = monName.substr(0,1);
-    let secondLetter = monName.substr(-1,1);
-    let innerText = `${firstLetter} - ${secondLetter}`;
-    lettersH3.innerText = innerText.toUpperCase();
-}
-
-function revealTypes(){
-    let type1 = monArr[0].type;
-    let type2 = monArr[0].type2;
-    if(monArr[0].type2 != null){
-    typeOneImg.src = `img/types/${type1}.png`;
-    typeTwoImg.src = `img/types/${type2}.png`;
-} else {
-    typeOneImg.src = `img/types/${type1}.png`;
-    }
-}
-
-function revealDexNum(){
-    let dexDiv = document.querySelector('#dexNum');
-    dexH3.innerText = `${mon}`; 
 }
 
 function winningScore(){

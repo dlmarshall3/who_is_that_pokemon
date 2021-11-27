@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who's that Pokémon?</title>
     <link rel="stylesheet" href="app.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="modal.css">
 </head>
 <body>
 
@@ -30,59 +29,80 @@
         
         <div id="guessDiv">
             <form>
-            <input type="text" placeholder="Who's that Pokémon?" id="guessInput" autofocus>
-            <button id="guessBtn">Guess!</button>
+            <input type="text" placeholder="Who's that Pokémon?" id="guessInput" size="26" required autofocus>
+            <button id="guessBtn"></button>
             </form>
         </div>
 
         <div id="hintsDiv" class="hints">
             <div id="types">
-                <button id="typesBtn" onclick="revealTypes()">Types</button>
-                <img src="" id="type1"><img src="" id="type2">
+                <button id="typesBtn"></button>
             </div>
             <div id="letters">
-                <button id="lettersBtn" onclick="revealLetters()">First/Last Letter</button>
-                <h3 id="lettersH3"></h3>
+                <button id="lettersBtn"></button>
             </div>
             <div id="dexNum">
-                <button id="dexNum" onclick="revealDexNum()">Pokedex Number</button>
-                <h3 id="dexNumH3"></h3>
+                <button id="dexNum"></button>
             </div>
         </div>
 
     </div>
 </div>
 
+<!--modals-->
+<div id="typesModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="typesSpan">&times;</span>
+            <h3>Types</h3>
+        </div>
+        <div class="modal-body">
+            <img src="" id="type1"><img src="" id="type2">
+        </div>
+    </div>
+</div>
 
-
-
+<div id="lettersModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="lettersSpan">&times;</span>
+            <h3>First/Last Letters</h3>
+        </div>
+        <div class="modal-body">
+            <p id="lettersText"></p>
+        </div>
+    </div>
+</div>
     
-<!-- <div id="bodyDiv">
+<div id="dexModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="dexSpan">&times;</span>
+            <h3>Pokédex Number</h3>
+        </div>
+        <div class="modal-body">
+            <p id="dexText"></p>
+        </div>
+    </div>
+</div>   
 
-    
-
-    
-
-    
-
-    
-
-</div> -->
-
-<!-- 
-    <button id="choose" onclick="chooseMon()">Choose</button>
-    <button id="cry" onclick="monCry()">Cry</button> -->
-    
-    
-
+<div id="tryAgainModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="tryAgainSpan">&times;</span>
+            <h3>Try again!</h3>
+        </div>
+        <div class="modal-body">
+            <p>You've got this! (Don't be afraid to use the hints and Google!)</p>
+        </div>
+    </div>
+</div> 
 
     
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
-    crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script src="modal.js"></script>
 
 </body>
 </html>
