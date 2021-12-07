@@ -13,7 +13,7 @@ Rules
 ------------------------------
 Again, like Pokénect Four, the rules are simple. You get a silhouetted Pokémon, and it's your job to guess who it is. If you're not familiar with Pokémon, no worries! After an incorrect guess, you get thre different hints, one of them being a Pokédex number. If you guess successfully, you're rewarded with the image being revealed and a soundbite of the Pokémon's cry from the original games.
 
-<a href="https://dlmarshall3.github.io/who_is_that_pokemon/"><img src="img/readme/clicktoplay.png"></a>
+<a href="https://dlmarshall3.github.io/who_is_that_pokemon/"><img src="img/readme/clicktoplay.png" target="_blank"></a>
 
 Generic Disclaimer
 ----------------
